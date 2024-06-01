@@ -1,55 +1,50 @@
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { Card, CardFooter } from "@nextui-org/card";
+import { Image } from "@nextui-org/image";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+    <section className="flex flex-row items-center justify-around gap-4 py-8 md:py-10">
       <div className="inline-block max-w-lg text-center justify-center">
-        <h1 className={title()}>Make&nbsp;</h1>
-        <h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
-        <br />
-        <h1 className={title()}>
-          websites regardless of your design experience.
-        </h1>
-        <h2 className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
-        </h2>
+        <Card isFooterBlurred radius="lg" className="border-none">
+          <Image
+            alt="Woman listing to music"
+            className="object-cover"
+            height={300}
+            src="https://nextui.org/images/hero-card.jpeg"
+            width={300}
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+            <p className="text-tiny text-white/80">El alcohol desnaturaliza las proteinas de los alimentos</p>
+          </CardFooter>
+        </Card>
       </div>
-
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.docs}
-        >
-          Documentation
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
+      <div className="inline-block max-w-lg text-center justify-center">
+        <Card isFooterBlurred radius="lg" className="border-none">
+          <Image
+            alt="Woman listing to music"
+            className="object-cover"
+            height={300}
+            src="https://nextui.org/images/hero-card.jpeg"
+            width={300}
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+            <p className="text-tiny text-white/80">Este es algún consejo sobre alergias alimentarias</p>
+          </CardFooter>
+        </Card>
       </div>
-
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="flat">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
+      <div className="inline-block max-w-lg text-center justify-center">
+        <Card isFooterBlurred radius="lg" className="border-none">
+          <Image
+            alt="Woman listing to music"
+            className="object-cover"
+            height={300}
+            src="https://nextui.org/images/hero-card.jpeg"
+            width={300}
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+            <p className="text-tiny text-white/80">Este es algún consejo sobre alergias alimentarias</p>
+          </CardFooter>
+        </Card>
       </div>
     </section>
   );
