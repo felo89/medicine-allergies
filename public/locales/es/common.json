@@ -1,0 +1,9 @@
+{
+  "menu": {
+    "home": "Principal",
+    "about": "Sobre nosotros"
+  },
+  "navbar": {
+    "finder": "Buscar"
+  }
+}
