@@ -26,6 +26,10 @@ import {
 } from "@/components/icons";
 
 export const Navbar = () => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('cambia', e.target)
+  }
+
   const searchInput = (
     <Input
       aria-label="Search"
