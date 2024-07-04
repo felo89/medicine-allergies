@@ -1,14 +1,12 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
+  name: "Medicine allergies",
+  description: "Page to know if a medicine contains an specific alergen",
   navItems: [
     {
       label: "Home",
       href: "/",
-    },
-    {
-      label: "About",
-      href: "/about",
     },
   ],
   navMenuItems: [

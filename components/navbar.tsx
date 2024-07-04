@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -27,7 +29,7 @@ import {
 
 export const Navbar = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('cambia', e.target)
+    console.log('cambia', e.target.value)
   }
 
   const searchInput = (
@@ -43,6 +45,7 @@ export const Navbar = () => {
         <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
       }
       type="search"
+      onChange={handleOnChange}
     />
   );
 
