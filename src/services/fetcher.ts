@@ -4,5 +4,5 @@ import { IFetcherData } from './fetcher.d';
 
 const baseURL = 'https://rickandmortyapi.com/api/character';
 
-export const fetcher = ({ url, method, data }: IFetcherData) =>
-  axios({ url, method, data, baseURL }).then((res) => res.data);
+export const fetcher = (fetcherData: IFetcherData) =>
+  axios({ ...fetcherData, baseURL }).then((res) => res.data);

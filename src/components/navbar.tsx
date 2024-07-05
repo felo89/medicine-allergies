@@ -15,7 +15,7 @@ import { Input } from '@nextui-org/input';
 import { link as linkStyles } from '@nextui-org/theme';
 import NextLink from 'next/link';
 import clsx from 'clsx';
-import useSWR from 'swr';
+import { preload } from 'swr';
 
 import { siteConfig } from '@/config/site';
 import { ThemeSwitch } from '@/components/theme-switch';
@@ -26,18 +26,15 @@ import {
   SearchIcon,
   Logo,
 } from '@/components/icons';
+import { fetcher } from '@/services/fetcher';
 
 export const Navbar = () => {
-  const { data } = useSWR({
-    url: '/?name=morty',
-    method: 'get',
-  });
-
-  console.log('data:', data);
-
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('cambia', e.target.value);
-    console.log('data', data);
+    preload(
+      'key',
+      await fetcher({ url: `/?name=${e.target.value}`, method: 'get' }),
+    );
   };
 
   const searchInput = (
